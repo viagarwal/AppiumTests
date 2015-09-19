@@ -18,6 +18,7 @@ public class EbaySignInPage extends Driver {
 	@AndroidFindBy(xpath ="//android.widget.Button[@text='Sign in']") public WebElement signInButton;
 	@AndroidFindBy(xpath="//android.widget.TextView[@text='REGISTER']") public WebElement registerLink;
 	@AndroidFindBy(xpath="//android.widget.Button[@text='Get started']") public WebElement getStartedButton;
+	
 	public EbaySignInPage() throws Exception {
 		PageFactory.initElements(new AppiumFieldDecorator(driver, 10, TimeUnit.SECONDS), this);
 	}
@@ -32,5 +33,6 @@ public class EbaySignInPage extends Driver {
 		registerLink.click();
 		WebDriverWaitUtils.waitElementToBeVisible(driver, getStartedButton);
 		getStartedButton.click();
+		WebDriverWaitUtils.invisibilityOfElementLocated(getStartedButton);
 	}
 }

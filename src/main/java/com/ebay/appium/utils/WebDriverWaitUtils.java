@@ -17,7 +17,6 @@ import com.google.common.base.Function;
 
 public class WebDriverWaitUtils {
 
-
 	/**
 	 * @param driver
 	 */

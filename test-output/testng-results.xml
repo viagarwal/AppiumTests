@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="7300" started-at="2015-09-10T19:22:29Z" finished-at="2015-09-10T19:22:36Z">
+  <suite name="Default suite" duration-ms="25825" started-at="2015-09-19T15:23:49Z" finished-at="2015-09-19T15:24:15Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="7300" started-at="2015-09-10T19:22:29Z" finished-at="2015-09-10T19:22:36Z">
+    <test name="Default test" duration-ms="25825" started-at="2015-09-19T15:23:49Z" finished-at="2015-09-19T15:24:15Z">
       <class name="com.ebay.appium.tests.AndroidSearchTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ebay.appium.tests.AndroidSearchTest@4ba66ed5]" name="setUp" is-config="true" duration-ms="30490" started-at="2015-09-11T00:51:58Z" finished-at="2015-09-11T00:52:29Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ebay.appium.tests.AndroidSearchTest@6e1513f3]" name="setUp" is-config="true" duration-ms="27347" started-at="2015-09-19T20:53:21Z" finished-at="2015-09-19T20:53:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.ebay.appium.tests.AndroidSearchTest@4ba66ed5]" name="beforeClass" is-config="true" duration-ms="389" started-at="2015-09-11T00:52:29Z" finished-at="2015-09-11T00:52:29Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.ebay.appium.tests.AndroidSearchTest@6e1513f3]" name="beforeClass" is-config="true" duration-ms="376" started-at="2015-09-19T20:53:49Z" finished-at="2015-09-19T20:53:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="goToSignInPage()[pri:0, instance:com.ebay.appium.tests.AndroidSearchTest@4ba66ed5]" name="goToSignInPage" duration-ms="6896" started-at="2015-09-11T00:52:29Z" finished-at="2015-09-11T00:52:36Z">
+        <test-method status="PASS" signature="goToSignInPage()[pri:0, instance:com.ebay.appium.tests.AndroidSearchTest@6e1513f3]" name="goToSignInPage" duration-ms="25432" started-at="2015-09-19T20:53:49Z" finished-at="2015-09-19T20:54:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- goToSignInPage -->

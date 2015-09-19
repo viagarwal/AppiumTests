@@ -1,19 +1,20 @@
 package com.ebay.appium.utils;
 
-import io.appium.java_client.MobileElement;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 import java.io.File;
 import java.net.URL;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeSuite;
 
 public class Driver {
 	
-	public static WebDriver driver  = null;;
+//	public static WebDriver driver  = null;;
+	public static AppiumDriver<WebElement> driver;
 	
 	@BeforeSuite
 	public void  setUp() throws Exception {
@@ -24,7 +25,11 @@ public class Driver {
 	    DesiredCapabilities capabilities = new DesiredCapabilities();
 	    capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
 	    capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
-	    driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+	    capabilities.setCapability("rotatable", true);
+//	    capabilities.setCapability("appPackage", "com.ebay.Mobile");
+	    driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+//	    driver = new AppiumDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+//	    driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
 	}
 }
