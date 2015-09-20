@@ -6,11 +6,8 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.ebay.appium.utils.Driver;
 import com.ebay.appium.utils.WebDriverWaitUtils;
@@ -23,24 +20,24 @@ public class EbayHomePage extends Driver {
 	@AndroidFindBy(className="android.widget.EditText") public WebElement searchInput;
 	@AndroidFindBy(xpath="//android.widget.ImageView[@content-desc='Submit query']") public WebElement searchButton;
 	@AndroidFindBy(xpath="//android.widget.Button[@text='Register']") public WebElement registerButton;
+	@AndroidFindBy(id="progress_layout") public WebElement progressLayOut;
 	
 	public EbayHomePage() throws Exception {
 		PageFactory.initElements(new AppiumFieldDecorator(driver, 10, TimeUnit.SECONDS), this);
 	}
 
 	public void searchInfo() {
-		WebDriverWaitUtils.waitElementToBeVisible(driver, searchBox);
+		WebDriverWaitUtils.waitElementToBeVisible(searchBox);
 		searchBox.click();
 		searchInput.sendKeys("Ebay");
 		searchButton.click();
-		WebDriverWaitUtils.invisibilityOfElementLocated(searchButton);
-		WebDriverWait wait = new WebDriverWait(driver, 300);
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("progress_layout")));
+		WebDriverWaitUtils.waitForElementToBeInVisible(searchButton);
+		WebDriverWaitUtils.waitForElementToBeInVisible(progressLayOut);
 	}
 	public void navigateToRegisterAccount() {
-		WebDriverWaitUtils.waitElementToBeVisible(driver, registerButton);
+		WebDriverWaitUtils.waitElementToBeVisible(registerButton);
 		registerButton.click();
-		WebDriverWaitUtils.invisibilityOfElementLocated(registerButton);
+		WebDriverWaitUtils.waitForElementToBeInVisible(registerButton);
 	}
 	
 

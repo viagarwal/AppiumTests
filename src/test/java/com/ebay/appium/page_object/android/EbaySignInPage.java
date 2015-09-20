@@ -29,10 +29,10 @@ public class EbaySignInPage extends Driver {
 		signInButton.click();
 	}
 	public void registerUser(){
-		WebDriverWaitUtils.waitElementToBeVisible(driver, registerLink);
+		WebDriverWaitUtils.waitElementToBeVisible(registerLink);
 		registerLink.click();
-		WebDriverWaitUtils.waitElementToBeVisible(driver, getStartedButton);
+		WebDriverWaitUtils.waitElementToBeVisible(getStartedButton);
 		getStartedButton.click();
-		WebDriverWaitUtils.invisibilityOfElementLocated(getStartedButton);
+		WebDriverWaitUtils.waitForElementToBeInVisible(getStartedButton);
 	}
 }

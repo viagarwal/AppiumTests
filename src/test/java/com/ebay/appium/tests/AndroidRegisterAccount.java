@@ -30,7 +30,7 @@ public class AndroidRegisterAccount extends Driver {
 	@Test
 	public void goToSignInPage(){
 
-		WebDriverWaitUtils.waitElementToBeVisible(driver, ebayHome.signInButton);
+		WebDriverWaitUtils.waitElementToBeVisible(ebayHome.signInButton);
 		ebayHome.navigateToRegisterAccount();
 		ebaySignInPage.registerUser();
 		ebayRegisterAccount.registerNewAccount();

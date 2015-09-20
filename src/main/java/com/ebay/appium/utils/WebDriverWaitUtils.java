@@ -15,12 +15,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.base.Function;
 
-public class WebDriverWaitUtils {
+public class WebDriverWaitUtils  extends Driver {
 
 	/**
 	 * @param driver
 	 */
-	void waitForLoad(WebDriver driver) {
+	void waitForLoad() {
 		ExpectedCondition<Boolean> pageLoadCondition = new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver driver) {
 				return ((JavascriptExecutor) driver).executeScript(
@@ -37,8 +37,7 @@ public class WebDriverWaitUtils {
 	 * @param timeoutSeconds
 	 * @return
 	 */
-	private static WebElement findElement(final WebDriver driver,
-			final By locator, final int timeoutSeconds) {
+	private static WebElement findElement(final By locator, final int timeoutSeconds) {
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
 				.withTimeout(timeoutSeconds, TimeUnit.SECONDS)
 				.pollingEvery(500, TimeUnit.MILLISECONDS)
@@ -57,7 +56,7 @@ public class WebDriverWaitUtils {
 	 * @param by
 	 * @return
 	 */
-	private boolean isElementPresent(WebDriver driver, By by) {
+	private boolean isElementPresent(By by) {
 		try {
 			driver.findElement(by);
 			return true;
@@ -72,7 +71,7 @@ public class WebDriverWaitUtils {
 	 * @return
 	 * @throws InterruptedException
 	 */
-	public static boolean isElementVisible(WebDriver driver, final By by)
+	public static boolean isElementVisible(final By by)
 			throws InterruptedException {
 		boolean value = false;
 
@@ -86,7 +85,7 @@ public class WebDriverWaitUtils {
 	 * @param driver
 	 * @param elm
 	 */
-	public static void waitElementToBeVisible(WebDriver driver , WebElement elm){
+	public static void waitElementToBeVisible(WebElement elm){
 		WebDriverWait wait  = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOf(elm));
 	}
@@ -95,7 +94,7 @@ public class WebDriverWaitUtils {
 	 * @param driver
 	 * @param elm
 	 */
-	public static void waitForElementToBeInVisible(WebDriver driver , WebElement elm){
+	public static void waitForElementToBeInVisible(WebElement elm){
 		WebDriverWait wait  = new WebDriverWait(driver, 20);
 		wait.until(invisibilityOfElementLocated(elm));
 	}
