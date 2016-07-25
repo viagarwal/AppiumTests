@@ -34,7 +34,8 @@ public class AndroidRegisterAccount extends Driver {
 		ebayHome.navigateToRegisterAccount();
 		ebaySignInPage.registerUser();
 		ebayRegisterAccount.registerNewAccount();
-	    ((Rotatable)driver).rotate(ScreenOrientation.LANDSCAPE);
+		ebayRegisterAccount.registerAccount();
+		((Rotatable)driver).rotate(ScreenOrientation.LANDSCAPE);
 
 	}	
 	

@@ -18,6 +18,13 @@ public class EbayRegisterAccount extends Driver {
 	@AndroidFindBy(className ="android.webkit.WebView") public WebElement webView;
 	@AndroidFindBy(className="android.widget.LinearLayout") public List<WebElement> frameList; 
 	@AndroidFindBy(id="progress_layout") public WebElement progressLayOut;
+	@AndroidFindBy(className="android.widget.ProgressBar") public WebElement progressBar;
+	@AndroidFindBy(xpath="//android.widget.TextView[@text ='First name']") public WebElement firstName;
+	@AndroidFindBy(id="lastname") public WebElement lastNameInput;
+	@AndroidFindBy(id="rpass") public WebElement passwordInput;
+	@AndroidFindBy(xpath="//*[@DESCRIPTION ='Email']") public WebElement emailInput;
+	@AndroidFindBy(id="remail") public WebElement confirmEmailInput;
+	@AndroidFindBy(className="android.widget.Button[@text='Register']") public WebElement registerButton;
 	
 	public EbayRegisterAccount() throws Exception {
 		PageFactory.initElements(new AppiumFieldDecorator(driver, 10,
@@ -29,14 +36,24 @@ public class EbayRegisterAccount extends Driver {
 		Set<String> availableContexts = driver.getContextHandles();
 		System.out.println("Total No of Context Found = "
 				+ availableContexts.size());
+		
 		for (String contextName : availableContexts) {
-			if (contextName.contains("WEBVIEW")) {
-				System.out.println("Context : " + contextName);
-				driver.context(contextName);
-				break;
-			}
+			System.out.println(contextName);
+			driver.context(contextName);
 		}
 		WebDriverWaitUtils.waitForElementToBeInVisible(progressLayOut);
+		WebDriverWaitUtils.waitForElementToBeInVisible(progressBar);
+	}
+	
+	public void registerAccount() {
+		
+		emailInput.click();
+		emailInput.sendKeys("iet.vipul@gmail.com");
+		confirmEmailInput.click();
+		confirmEmailInput.sendKeys("iet.vipul@gmail.com");
+//		firstName.click();
+//		firstName.sendKeys("vipul");
+//		registerButton.click();
 	}
 
 }

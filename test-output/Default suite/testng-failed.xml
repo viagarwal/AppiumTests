@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.ebay.appium.tests.AndroidSearchTest">
+      <class name="com.ebay.appium.tests.AndroidRegisterAccount">
         <methods>
-          <include name="goToSignInPage"/>
           <include name="setUp"/>
+          <include name="goToSignInPage"/>
           <include name="beforeClass"/>
         </methods>
-      </class> <!-- com.ebay.appium.tests.AndroidSearchTest -->
+      </class> <!-- com.ebay.appium.tests.AndroidRegisterAccount -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
